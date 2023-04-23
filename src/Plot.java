@@ -13,6 +13,17 @@ public class Plot {
         } else if (num==1){
             plantname = "corn";
         }
+        if (num==2){
+            plantname="carrots";
+        } else if (num ==3){
+            plantname = "tomato";
+        }
+        if (num==4){
+            plantname= "empty";
+        }
     }
 
+    public void printplot() {
+        System.out.println("Plot" + plantname + " has" + numberofplants + " plants, and it is" + needswater + "that it needs water");
+    }
 }
