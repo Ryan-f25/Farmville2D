@@ -12,18 +12,19 @@ public class Plot {
             plantname = "sunflower";
         } else if (num==1){
             plantname = "corn";
-        }
-        if (num==2){
+        } else if (num==2){
             plantname="carrots";
-        } else if (num ==3){
+        }else if (num ==3){
             plantname = "tomato";
-        }
-        if (num==4){
+        } else {
             plantname= "empty";
+            numberofplants = 0;
         }
+
+
     }
 
     public void printplot() {
-        System.out.println("Plot" + plantname + " has" + numberofplants + " plants, and it is" + needswater + "that it needs water");
+        System.out.println("The plot has " + numberofplants + " " + plantname + " and it is " + needswater + " that it needs water");
     }
 }
