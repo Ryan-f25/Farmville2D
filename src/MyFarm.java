@@ -9,9 +9,11 @@ public class MyFarm {
     public MyFarm() {
         System.out.println("hello");
         Plot wick = new Plot();
-        wick.printplot();
 
-        grid = new Plot[4][3];
+
+
+
+        grid = new Plot[6][6];
         for (int p = 0; p < grid.length; p++) {
             for (int h = 0; h < grid[p].length; h++) {
                 grid[p][h] = new Plot();
@@ -19,6 +21,7 @@ public class MyFarm {
             }
         }
         totalplants();
+        printPlantNames();
 
     }
 
@@ -26,7 +29,27 @@ public class MyFarm {
 
     public void totalplants() {
         // how many total plants are there in the row?
-        grid.numberofplants();
+        int sumofplants = 0;
+
+        for(int e=0;e<grid.length;e++ ){
+            for(int c =0; c<grid[e].length; c++){
+                sumofplants += grid[e][c].numberofplants;
+
+
+            }
+        }
+        System.out.println(sumofplants);
     }
+
+    public void printPlantNames() {
+        // print the name of each plant in each row and column and its indexes
+        for (int y=0; y <grid.length; y++) {
+            for(int x = 0; x<grid.length; x++) {
+                System.out.println("row: " + y + "col: " + x + grid[y][x].plantname);
+            }
+        }
+
+    }
+
 
 }
