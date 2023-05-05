@@ -24,6 +24,9 @@ public class MyFarm {
         printPlantNames();
         totalcarrots();
         averageNumberOfPlants();
+        numberOfTomatoPlots();
+        numberOfEmptyPlots();
+
 
     }
 
@@ -69,7 +72,6 @@ public class MyFarm {
 
     public void averageNumberOfPlants() {
         // what is the average number of plants across the whole grid?
-        int avgnumberofplants = 0;
         int numofplants =0;
         int totalplants=0;
         for (int a=0; a<grid.length; a++){
@@ -80,6 +82,46 @@ public class MyFarm {
         }
         System.out.println("the average number of plants on the plot is " + numofplants/totalplants);
     }
+
+    public void numberOfTomatoPlots() {
+        // how many plots have tomatoes on them
+        int numoftomatoplots = 0;
+        for (int h = 0; h < grid.length; h++) {
+            for (int j = 0; j < grid[h].length; j++) {
+                if(grid[h][j].plantname .equals("tomato")){
+                    numoftomatoplots += 1;
+
+                }
+            }
+        }
+        System.out.println("there are " + numoftomatoplots + " number of tomato plots in the grid.");
+    }
+
+    public void numberOfEmptyPlots() {
+        // how many plots are empty
+        int numofemptyplots =0;
+        for (int q=0; q<grid.length; q++){
+            for (int l=0; l<grid[q].length; l++){
+                if(grid[q][l].plantname .equals("empty")){
+                    numofemptyplots =1;
+                }
+            }
+        }
+        System.out.println("there are " + numofemptyplots + " number of empty plots in the grid.");
+    }
+
+    public void everyOtherNeedsWater(){
+        // change the value of needsWater to be true for every other plot
+        // print the value or needs water for all plots row by row
+        for (int t= 0; t<grid.length; t++){
+            for (int r =0; r<grid[t].length; r++){
+                grid[t][r].needswater = true;
+            }
+        }
+    }
+
+
+
 
 
 
