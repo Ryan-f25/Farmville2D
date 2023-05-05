@@ -71,7 +71,9 @@ public class MyFarm {
         // what is the average number of plants across the whole grid?
         int avgnumberofplants = 0;
         for (int a=0; a<grid.length; a++){
-            for (int d=0; d<grid[a].length; d++);
+            for (int d=0; d<grid[a].length; d++) {
+                avgnumberofplants += grid[a][d].sumofplants / grid[a][d].length;
+            }
         }
     }
 
