@@ -13,19 +13,32 @@ public class MyFarmArrayList {
         //arr[0].printplot();
 
 
-        for (int p = 0; p < 10; p++) {
-            System.out.println(row.size());
-            row.add(new Plot()); // add to an array list
-            row.get(p).printplot();
-            row.add("rice");
-            row.add("meat");
-            row.add("fruits");
-            row.add("veggies");
-            System.out.println(row);
+//        for (Plot a : row) {
+//                row.add(new Plot()); // add to an array list
+//                a.printplot();
+//                System.out.println(row.size());
+//            }
 
+
+
+                for (int k = 0; k < 10; k++) {
+                    row.add(new Plot()); // add to an array list
+                    row.get(k).printplot();
+                }
+                row.remove(5);
+                System.out.println(row.size());
+                totalPlants();
         }
-        row.remove(2);
-        System.out.println(row.size());
+
+    public void totalPlants() {
+        // how many total plants are there in the row?
+        int sumofplants =0;
+        for (Plot a : row) {
+            sumofplants += a.numberofplants;
+        }
+        System.out.println("There are " + sumofplants + " plants in the grid");
     }
+
 }
+
 
