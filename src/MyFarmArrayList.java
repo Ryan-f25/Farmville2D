@@ -28,6 +28,8 @@ public class MyFarmArrayList {
                 row.remove(5);
                 System.out.println(row.size());
                 totalPlants();
+                printPlantNames();
+                printRowInfo();
         }
 
     public void totalPlants() {
@@ -38,6 +40,22 @@ public class MyFarmArrayList {
         }
         System.out.println("There are " + sumofplants + " plants in the grid");
     }
+
+    public void printPlantNames() {
+        // print the name of each plant in the row and its index
+        for (Plot a : row) {
+            System.out.println("row: "  + a.plantname + " " + a);
+        }
+    }
+
+    public void printRowInfo() {
+        // use the printPlotInfo() method in Plot.java to print all information for each plot in the row
+        for (Plot a : row) {
+            System.out.println("This row has " + a.numberofplants + " plants and it is a " +  a.plantname + ". It is "+ a.needswater + " that it needs water");
+        }
+    }
+
+
 
 }
 
