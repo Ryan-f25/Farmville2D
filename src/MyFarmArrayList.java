@@ -28,8 +28,10 @@ public class MyFarmArrayList {
                 row.remove(5);
                 System.out.println(row.size());
                 totalPlants();
-                printPlantNames();
                 printRowInfo();
+                addSunflower();
+                addCorn();
+                printPlantNames();
         }
 
     public void totalPlants() {
@@ -43,9 +45,10 @@ public class MyFarmArrayList {
 
     public void printPlantNames() {
         // print the name of each plant in the row and its index
-        for (Plot a : row) {
-            System.out.println("row: "  + a.plantname + " " + a);
+        for (int a=0; a<row.size(); a++) {
+            System.out.print(a + ": " + row.get(a).plantname + "\t"); //\t creates a tab between the words
         }
+        System.out.println();
     }
 
     public void printRowInfo() {
@@ -54,6 +57,27 @@ public class MyFarmArrayList {
             System.out.println("This row has " + a.numberofplants + " plants and it is a " +  a.plantname + ". It is "+ a.needswater + " that it needs water");
         }
     }
+
+    public void addSunflower() {
+        // add a sunflower plot to the end of the row with 42 plants that need water
+        // call printPlantNames() method before and after your addition to make sure it worked
+        Plot sunflower = new Plot();
+        sunflower.plantname = "sunflower";
+        sunflower.numberofplants = 42;
+        sunflower.needswater = true;
+        sunflower.printplot();
+        row.add(sunflower);
+
+    }
+
+    public void addCorn(){
+        // add a corn at index 3
+        Plot corn = new Plot();
+        corn.plantname = "corn";
+        corn.numberofplants = 21;
+        row.add(3, corn);
+    }
+
 
 
 
