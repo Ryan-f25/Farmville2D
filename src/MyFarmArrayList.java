@@ -32,6 +32,11 @@ public class MyFarmArrayList {
                 addSunflower();
                 addCorn();
                 printPlantNames();
+                tomatoLocations();
+                totalcarrots();
+                averageNumberOfPlants();
+                numberOfCarrotPlots();
+                numberOfEmptyPlots();
         }
 
     public void totalPlants() {
@@ -76,6 +81,66 @@ public class MyFarmArrayList {
         corn.plantname = "corn";
         corn.numberofplants = 21;
         row.add(3, corn);
+    }
+
+    public void tomatoLocations() {
+        // print indexes of all tomato plants
+        // call printPlantNames() method to make sure you're getting the correct indexes
+
+        for (int m = 0; m < row.size(); m++) {
+            if (row.get(m).plantname.equals("tomato")) {
+                System.out.println("The tomatos are in row " + m);
+            }
+        }
+    }
+
+    public void totalcarrots(){
+        // how many total carrot plants are there?
+        int sumofCarrots =0;
+        for (Plot a: row){
+            if(a.plantname.equals("carrots")) {
+                sumofCarrots += a.numberofplants;
+            }
+        }
+        System.out.println("There are " + sumofCarrots + " carrots in the row");
+    }
+
+    public void averageNumberOfPlants() {
+        // what is the average number of plants across the whole row?
+        int numofplants = 0;
+        int totalplants = 0;
+        int avgnumofplants = 0;
+        for(int t=0;t<row.size(); t++){
+            numofplants+= row.get(t).numberofplants;
+
+        }
+        avgnumofplants += numofplants/row.size();
+        System.out.println("there is an average of " + avgnumofplants + " plants");
+    }
+
+    public void numberOfCarrotPlots() {
+        // how many plots have carrots on them
+        // call printPlantNames() method to check
+        int numofcarrotplots = 0;
+        for (int m = 0; m < row.size(); m++) {
+            if (row.get(m).plantname.equals("carrots")) {
+                numofcarrotplots +=1;
+
+            }
+        }
+        System.out.println("There are " + numofcarrotplots + " plots with carrots");
+    }
+
+    public void numberOfEmptyPlots() {
+        // how many plots are empty
+        // call printPlantNames() method to check
+        int numofemptyplots =0;
+        for (int m = 0; m < row.size(); m++){
+            if (row.get(m).plantname.equals("empty")){
+                numofemptyplots +=1;
+            }
+        }
+        System.out.println("There are " + numofemptyplots + " plots with nothing");
     }
 
 
