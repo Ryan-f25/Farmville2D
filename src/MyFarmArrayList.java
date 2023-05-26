@@ -37,7 +37,9 @@ public class MyFarmArrayList {
                 averageNumberOfPlants();
                 numberOfCarrotPlots();
                 numberOfEmptyPlots();
+                System.out.println("Changed needs water");
                 everyOtherNeedsWater();
+                printRowInfo();
         }
 
     public void totalPlants() {
@@ -147,19 +149,14 @@ public class MyFarmArrayList {
     public void everyOtherNeedsWater(){
         // change the value of needsWater to be true for every other plot
         int numberwater=0;
-        for (int m = 0; m < row.size(); m++){
-            numberwater = numberwater*-1;
-            if (numberwater == 1) {
+        for (int m = 0; m < row.size(); m++) {
+            if(m % 2 == 1){//if when n is divided by 2 it equals 1, then...
+                row.get(m).needswater = false;
+            } else {
                 row.get(m).needswater = true;
             }
-            if (numberwater == -1) {
-                row.get(m).needswater = false;
 
-
-            }
-            System.out.println(row.get(m).needswater);
         }
-
     }
 
     public void plantWithMaxNumber() {
