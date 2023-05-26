@@ -37,6 +37,7 @@ public class MyFarmArrayList {
                 averageNumberOfPlants();
                 numberOfCarrotPlots();
                 numberOfEmptyPlots();
+                everyOtherNeedsWater();
         }
 
     public void totalPlants() {
@@ -142,6 +143,31 @@ public class MyFarmArrayList {
         }
         System.out.println("There are " + numofemptyplots + " plots with nothing");
     }
+
+    public void everyOtherNeedsWater(){
+        // change the value of needsWater to be true for every other plot
+        int numberwater=0;
+        for (int m = 0; m < row.size(); m++){
+            numberwater = numberwater*-1;
+            if (numberwater == 1) {
+                row.get(m).needswater = true;
+            }
+            if (numberwater == -1) {
+                row.get(m).needswater = false;
+
+
+            }
+            System.out.println(row.get(m).needswater);
+        }
+
+    }
+
+    public void plantWithMaxNumber() {
+        // which plant type has the most total plants?
+
+    }
+
+
 
 
 
